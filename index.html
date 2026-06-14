@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>星声破浪辩论俱乐部 | 西海岸首支专业青少年辩论战队</title>
+<meta name="description" content="星声破浪辩论俱乐部，青岛西海岸首支专业青少年辩论战队。专注K12辩论训练，暑假集训营招募中。从零基础到全国赛场，预约试训点击了解。">
+<meta name="keywords" content="辩论培训,青少年辩论,青岛辩论,西海岸辩论,辩论俱乐部,暑假辩论营,星声破浪,少儿口才,逻辑思维,表达能力">
+<meta property="og:title" content="星声破浪辩论俱乐部">
+<meta property="og:description" content="西海岸首支专业青少年辩论战队。暑假集训营招募中。">
+<meta property="og:type" content="website">
+<link rel="canonical" href="https://dhao089.github.io/xingsheng-polang">
+<style>
+  :root {
+    --bg: #0a0e17;
+    --bg-card: rgba(15, 20, 30, 0.7);
+    --gold: #c9a24d;
+    --gold-light: #e0c87c;
+    --text: #e2e8f0;
+    --text-dim: #8892a4;
+    --border: rgba(201, 162, 77, 0.15);
+    --glass: rgba(15, 20, 30, 0.6);
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'PingFang SC', 'Microsoft YaHei', 'Noto Sans SC', system-ui, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: radial-gradient(ellipse at 30% 10%, rgba(201,162,77,0.06) 0%, transparent 50%),
+                radial-gradient(ellipse at 70% 90%, rgba(201,162,77,0.04) 0%, transparent 50%);
+    pointer-events: none; z-index: 0;
+  }
+  .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; position: relative; z-index: 1; }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: rgba(10,14,23,0.85); backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-inner {
+    max-width: 1100px; margin: 0 auto; padding: 0 24px;
+    display: flex; justify-content: space-between; align-items: center;
+    height: 64px;
+  }
+  .nav-logo { font-size: 18px; font-weight: 700; color: var(--gold); letter-spacing: 1px; }
+  .nav-links { display: flex; gap: 28px; list-style: none; }
+  .nav-links a { color: var(--text-dim); text-decoration: none; font-size: 14px; transition: color 0.2s; }
+  .nav-links a:hover { color: var(--gold); }
+  .nav-cta {
+    background: linear-gradient(135deg, var(--gold), #b8923e);
+    color: #0a0e17 !important; padding: 8px 20px; border-radius: 8px;
+    font-weight: 600; font-size: 13px;
+  }
+
+  /* HERO */
+  #hero {
+    min-height: 100vh; display: flex; align-items: center;
+    padding-top: 64px;
+  }
+  .hero-content { max-width: 650px; }
+  .hero-badge {
+    display: inline-block; padding: 6px 16px; border: 1px solid rgba(201,162,77,0.3);
+    border-radius: 20px; color: var(--gold-light); font-size: 13px; margin-bottom: 24px;
+  }
+  .hero-content h1 { font-size: 52px; font-weight: 800; letter-spacing: -1px; line-height: 1.2; margin-bottom: 20px; }
+  .hero-content h1 span { color: var(--gold); }
+  .hero-content p { font-size: 18px; color: var(--text-dim); margin-bottom: 36px; max-width: 500px; }
+  .hero-buttons { display: flex; gap: 14px; flex-wrap: wrap; }
+  .btn-primary {
+    background: linear-gradient(135deg, var(--gold), #b8923e);
+    color: #0a0e17; border: none; padding: 14px 32px; border-radius: 10px;
+    font-size: 15px; font-weight: 700; cursor: pointer; text-decoration: none;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(201,162,77,0.25); }
+  .btn-secondary {
+    background: transparent; color: var(--gold); border: 1px solid rgba(201,162,77,0.3);
+    padding: 14px 32px; border-radius: 10px; font-size: 15px; font-weight: 600;
+    cursor: pointer; text-decoration: none; transition: all 0.2s;
+  }
+  .btn-secondary:hover { border-color: var(--gold); background: rgba(201,162,77,0.05); }
+
+  /* SECTIONS */
+  section { padding: 100px 0; }
+  .section-tag {
+    display: inline-block; font-size: 12px; text-transform: uppercase;
+    letter-spacing: 3px; color: var(--gold); margin-bottom: 12px;
+  }
+  .section-title { font-size: 36px; font-weight: 700; margin-bottom: 16px; }
+  .section-subtitle { color: var(--text-dim); font-size: 16px; max-width: 560px; margin-bottom: 48px; }
+
+  /* ABOUT */
+  .about-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center;
+  }
+  .about-text p { color: var(--text-dim); margin-bottom: 16px; font-size: 15px; }
+  .about-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 28px; }
+  .stat-card {
+    background: var(--glass); border: 1px solid var(--border); border-radius: 12px;
+    padding: 20px; text-align: center;
+  }
+  .stat-card .num { font-size: 32px; font-weight: 800; color: var(--gold); }
+  .stat-card .label { font-size: 13px; color: var(--text-dim); margin-top: 4px; }
+  .about-img {
+    width: 100%; aspect-ratio: 4/3; border-radius: 16px;
+    background: linear-gradient(135deg, rgba(15,25,40,0.9), rgba(10,14,23,0.6));
+    border: 1px solid var(--border);
+    display: flex; align-items: center; justify-content: center;
+    position: relative; overflow: hidden;
+  }
+  .about-img-placeholder {
+    font-size: 80px; opacity: 0.3;
+  }
+
+  /* PROGRAMS */
+  .programs-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;
+  }
+  .program-card {
+    background: var(--glass); border: 1px solid var(--border); border-radius: 16px;
+    padding: 32px 24px; transition: all 0.3s;
+  }
+  .program-card:hover { border-color: rgba(201,162,77,0.3); transform: translateY(-4px); }
+  .program-card .icon { font-size: 36px; margin-bottom: 16px; }
+  .program-card h3 { font-size: 18px; margin-bottom: 12px; color: var(--gold-light); }
+  .program-card p { color: var(--text-dim); font-size: 14px; margin-bottom: 20px; }
+  .program-card .price { font-size: 24px; font-weight: 700; color: var(--gold); }
+  .program-card .price-note { font-size: 12px; color: var(--text-dim); margin-left: 6px; }
+  .program-card .tag {
+    display: inline-block; padding: 3px 10px; background: rgba(201,162,77,0.1);
+    color: var(--gold-light); border-radius: 4px; font-size: 11px; margin-top: 12px;
+  }
+
+  /* COMPETITIONS */
+  .comp-card {
+    background: var(--glass); border: 1px solid var(--border); border-radius: 16px;
+    padding: 32px; display: flex; gap: 32px; align-items: center;
+    margin-bottom: 20px;
+  }
+  .comp-date {
+    min-width: 100px; text-align: center;
+    font-size: 28px; font-weight: 700; color: var(--gold); line-height: 1.2;
+  }
+  .comp-date span { display: block; font-size: 13px; color: var(--text-dim); font-weight: 400; }
+  .comp-info h3 { font-size: 20px; margin-bottom: 8px; }
+  .comp-info p { color: var(--text-dim); font-size: 14px; }
+
+  /* COACHES */
+  .coach-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .coach-card {
+    background: var(--glass); border: 1px solid var(--border); border-radius: 16px;
+    padding: 32px 24px; text-align: center;
+  }
+  .coach-avatar {
+    width: 80px; height: 80px; border-radius: 50%; margin: 0 auto 16px;
+    background: linear-gradient(135deg, var(--gold), #b8923e);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 28px; font-weight: 700; color: #0a0e17;
+  }
+  .coach-card h3 { font-size: 18px; margin-bottom: 4px; }
+  .coach-card .role { color: var(--gold); font-size: 13px; margin-bottom: 12px; }
+  .coach-card p { color: var(--text-dim); font-size: 13px; }
+
+  /* CTA */
+  #contact {
+    text-align: center;
+  }
+  .cta-box {
+    background: var(--glass); border: 1px solid var(--border); border-radius: 20px;
+    padding: 56px 32px; max-width: 650px; margin: 0 auto;
+  }
+  .cta-box h2 { font-size: 32px; margin-bottom: 12px; }
+  .cta-box p { color: var(--text-dim); margin-bottom: 32px; }
+  .contact-methods { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-top: 24px; }
+  .contact-item {
+    background: rgba(201,162,77,0.06); border: 1px solid var(--border);
+    border-radius: 10px; padding: 14px 20px; font-size: 14px;
+  }
+  .contact-item strong { color: var(--gold-light); }
+
+  /* FOOTER */
+  footer {
+    border-top: 1px solid var(--border); padding: 40px 0; text-align: center;
+    color: var(--text-dim); font-size: 13px;
+  }
+  footer .brand { color: var(--gold); font-weight: 600; margin-bottom: 8px; }
+
+  /* MOBILE */
+  @media (max-width: 768px) {
+    .hero-content h1 { font-size: 34px; }
+    .about-grid, .programs-grid, .coach-grid { grid-template-columns: 1fr; }
+    .comp-card { flex-direction: column; text-align: center; }
+    .nav-links { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <div class="nav-logo">✦ 星声破浪</div>
+    <ul class="nav-links">
+      <li><a href="#about">关于我们</a></li>
+      <li><a href="#programs">课程体系</a></li>
+      <li><a href="#competitions">赛事动态</a></li>
+      <li><a href="#coaches">教练团队</a></li>
+      <li><a href="#contact" class="nav-cta">预约试训</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="container">
+    <div class="hero-content">
+      <div class="hero-badge">🏆 西海岸首支专业青少年辩论战队</div>
+      <h1>让每一次开口<br>都有<span>分量</span></h1>
+      <p>我们用逻辑拆解世界，用表达征服赛场。从零基础到全国赛，星声破浪陪每一个孩子成为敢于发声的人。</p>
+      <div class="hero-buttons">
+        <a href="#contact" class="btn-primary">预约免费试训</a>
+        <a href="#programs" class="btn-secondary">了解课程 →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="container">
+    <div class="section-tag">About</div>
+    <div class="section-title">关于星声破浪</div>
+    <div class="section-subtitle">不是兴趣班，不是托管班——我们只做一件事：培养能打比赛的辩手。</div>
+    <div class="about-grid">
+      <div class="about-text">
+        <p>星声破浪辩论俱乐部成立于青岛西海岸，挂靠MIC星主播语言艺术中心，是西海岸第一支面向K12青少年的专业化辩论战队。</p>
+        <p>我们拥有完整的辩论训练体系：从立论构建到攻防技巧，从即兴陈词到模拟实战。教练团队由资深辩手组成，具备多年全国赛带队经验。</p>
+        <p>2026年7月，我们将出征全国辩论赛长沙站。这不是终点，是起点。</p>
+        <div class="about-stats">
+          <div class="stat-card"><div class="num">3</div><div class="label">年龄组别</div></div>
+          <div class="stat-card"><div class="num">16</div><div class="label">精品小班</div></div>
+          <div class="stat-card"><div class="num">N+</div><div class="label">全国赛场</div></div>
+        </div>
+      </div>
+      <div class="about-img">
+        <div class="about-img-placeholder">⚓</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROGRAMS -->
+<section id="programs">
+  <div class="container">
+    <div class="section-tag">Programs</div>
+    <div class="section-title">课程体系</div>
+    <div class="section-subtitle">分级训练 + 实战导向，让每个孩子找到自己的辩论节奏。</div>
+    <div class="programs-grid">
+      <div class="program-card">
+        <div class="icon">🔥</div>
+        <h3>暑假辩论集训营</h3>
+        <p>10天密集训练。立论构建 · 攻防技巧 · 即兴陈词 · 模拟实战。结营后可直接参赛。</p>
+        <div class="price">¥2,680 <span class="price-note">早鸟 ¥2,380</span></div>
+        <div class="tag">2026暑期档</div>
+      </div>
+      <div class="program-card">
+        <div class="icon">📋</div>
+        <h3>常规辩论训练</h3>
+        <p>每周1-2次训练，分初级/中级/高级三档。涵盖辩论理论、实战模拟、赛事复盘。</p>
+        <div class="price">按期报名</div>
+        <div class="tag">常年招生</div>
+      </div>
+      <div class="program-card">
+        <div class="icon">🎯</div>
+        <h3>赛前1对1特训</h3>
+        <p>针对特定赛事定制训练方案。立论打磨、攻防推演、即兴陈词强化。教练全程陪跑。</p>
+        <div class="price">预约制</div>
+        <div class="tag">赛前冲刺</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPETITIONS -->
+<section id="competitions">
+  <div class="container">
+    <div class="section-tag">Competitions</div>
+    <div class="section-title">赛事动态</div>
+    <div class="section-subtitle">赛场是最好的老师。每一场实战都是一次蜕变。</div>
+    <div class="comp-card">
+      <div class="comp-date">07.21<span>—</span>07.27<span>2026</span></div>
+      <div class="comp-info">
+        <h3>全国辩论赛 · 长沙站</h3>
+        <p>星声破浪首战全国赛场。我们的第一支战队将出征长沙，与全国青少年辩手同台竞技。备战进行中。</p>
+      </div>
+    </div>
+    <div class="comp-card">
+      <div class="comp-date">即将<span>公布</span></div>
+      <div class="comp-info">
+        <h3>西海岸青少年辩论邀请赛</h3>
+        <p>星声破浪主办的本地赛事。为西海岸青少年辩手打造一个属于他们的赛场。敬请期待。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COACHES -->
+<section id="coaches">
+  <div class="container">
+    <div class="section-tag">Coaches</div>
+    <div class="section-title">教练团队</div>
+    <div class="section-subtitle">好辩手未必是好教练。我们的教练不仅赢过比赛，更懂得如何教。</div>
+    <div class="coach-grid">
+      <div class="coach-card">
+        <div class="coach-avatar">丁</div>
+        <h3>丁教练</h3>
+        <div class="role">主教练</div>
+        <p>多年辩论参赛与带队经验<br>擅长：立论构建、赛事策略</p>
+      </div>
+      <div class="coach-card">
+        <div class="coach-avatar">蔡</div>
+        <h3>蔡教练</h3>
+        <div class="role">运营教练</div>
+        <p>家长沟通、训练协调<br>擅长：学员评估、进度管理</p>
+      </div>
+      <div class="coach-card">
+        <div class="coach-avatar">+</div>
+        <h3>特邀教练</h3>
+        <div class="role">赛前加盟</div>
+        <p>全国赛评委级教练<br>赛前特训阶段特邀加盟</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container">
+    <div class="cta-box">
+      <h2>准备好上场了吗？</h2>
+      <p>预约免费试训，感受辩论的力量。我们会在24小时内联系你。</p>
+      <a href="#" class="btn-primary">预约免费试训</a>
+      <div class="contact-methods">
+        <div class="contact-item"><strong>📍</strong> 青岛西海岸 · MIC星主播校区</div>
+        <div class="contact-item"><strong>📱</strong> 关注公众号：星声破浪辩论队</div>
+        <div class="contact-item"><strong>📧</strong> 咨询请公众号留言</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="brand">✦ 星声破浪辩论俱乐部</div>
+    <p>青岛西海岸首支专业青少年辩论战队 · MIC星主播语言艺术中心旗下品牌</p>
+    <p style="margin-top:8px">&copy; 2026 星声破浪辩论俱乐部</p>
+  </div>
+</footer>
+
+</body>
+</html>
